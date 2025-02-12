@@ -1,0 +1,14 @@
+name: "node_18_app"
+services:
+  node:
+    image: "node:18"
+    user: "node"
+    working_dir: /home/node/app
+    environment:
+      - NODE_ENV=dev
+    volumes:
+      - ./app:/home/node/app
+    ports: 
+      - 3000:3000
+#    command: "tail -F anything"
+    command: "npm start"
